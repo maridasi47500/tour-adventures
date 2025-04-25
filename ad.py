@@ -1,6 +1,7 @@
 # coding=utf-8
 import sqlite3
 import sys
+
 import re
 import math
 from model import Model
@@ -28,11 +29,36 @@ class Ad(Model):
                     );""")
         self.con.commit()
         #self.con.close()
+    def mymusicjournal(self):
+        i=["violin","piano","guitar","trumpet","drums"]
+        random_i = str(random.choice(i))
+        minutes=str(random.randint(100, 200))
+        return "wow, i must have practiced "+random_i+" "+minutes+"today!"
+    def mysportjournal(self):
+        list=["football","figure skating","tennis","rugby","rowing"]
+        random_num = str(random.choice(list))
+        return "wow, that was my record in "+random_num+" today:"
     def samecity(self):
+        list=["f","m"]
+        random_num = random.choice(list)
+        i=["violin","piano","guitar","trumpet","drums"]
+        random_i = random.choice(i)
         mytext="oh no"
-        myname=self.fake.name()
+
         mycity=self.fake.city()
-        mytext+=", "+myname+"'s concert is soon in my city, and I want to go so much. The concert is in "+mycity+" in 1 week, I so much want to book the tickets."
+        if random_num == "f":
+          concert="her"
+          musician="her"
+          music="she"
+          myname=self.fake.first_name_female()
+        elif random_num == "f":
+          concert="his"
+          musician="him"
+          music="he"
+          myname=self.fake.first_name_male()
+        Faker.seed(0)
+        mycountry=self.fake.country()
+        mytext+=", "+myname+"'s concert is soon in my city,"+myname+" is from "+mycountry+", "+music+" is my favorite "+random_i+" player, and I want to go to "+concert+" concert so much. "+concert+" concert is in "+mycity+" in 1 week, I so much want to book the tickets to see "+musician+"."
         return mytext
     def getall(self):
         self.cur.execute("select * from ad")

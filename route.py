@@ -82,6 +82,10 @@ class Route():
         
         self.render_figure.set_params("sometext",self.Ad.samecity())
         return self.render_figure.render_figure("welcome/newad.html")
+    def mysportjournal(self,search={}):
+        
+        self.render_figure.set_params("sometext",self.Ad.mysportjournal())
+        return self.render_figure.render_figure("welcome/newad.html")
     def newad(self,search={}):
         self.render_figure.set_params("sometext","")
         return self.render_figure.render_figure("welcome/newad.html")
@@ -180,6 +184,7 @@ class Route():
                     '^/chercherad$': self.searchad,
                     '^/chercheradweb$': self.searchadweb,
                     '^/samecity$': self.samecity,
+                    '^/mysportjournal$': self.mysportjournal,
                     '^/newad$': self.newad,
                     "^/voirad/([0-9]+)$":self.voirad,
                     '^/createad$': self.createad,
