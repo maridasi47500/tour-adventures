@@ -13,7 +13,7 @@ import sys
 
 class Route():
     def __init__(self):
-        self.Program=Directory("trouve 1 job ")
+        self.Program=Directory("trouve 1 ad ")
         self.Program.set_path("./")
         self.mysession={"notice":None,"email":None,"name":None}
         self.scriptruby=Scriptruby
@@ -30,7 +30,7 @@ class Route():
         self.render_figure.set_session(self.Program.get_session())
     def get_exception_routes(self):
         #form n'est pas envoye avec javascript/jquery
-        return ["/chercherjobweb","/chercherjob"]
+        return ["/chercheradweb","/chercherad"]
     def get_some_post_data(self,params=()):
         #if route in  some routes
         x={}
@@ -78,49 +78,54 @@ class Route():
     def hello(self,search):
         print("hello action")
         return self.render_figure.render_figure("welcome/index.html")
-    def newjob(self,search={}):
-        return self.render_figure.render_figure("welcome/newjob.html")
-    def createjob(self,params={}):
+    def samecity(self,search={}):
+        
+        self.render_figure.set_params("sometext",self.Ad.samecity())
+        return self.render_figure.render_figure("welcome/newad.html")
+    def newad(self,search={}):
+        self.render_figure.set_params("sometext","")
+        return self.render_figure.render_figure("welcome/newad.html")
+    def createad(self,params={}):
         myparams=self.get_post_data()(params=("name","lat","lon","description",))
-        job=self.db.Job.create(myparams)
-        if job["job_id"]:
-          self.set_notice(job["notice"])
-          self.set_json("{\"redirect\":\"/voirjob/"+job["job_id"]+"\"}")
+        ad=self.db.Ad.create(myparams)
+        if ad["ad_id"]:
+          self.set_notice(ad["notice"])
+          self.set_json("{\"redirect\":\"/voirad/"+ad["ad_id"]+"\"}")
         else:
           self.set_json("{\"redirect\":\"/\"}")
         return self.render_figure.render_json()
-    def searchjobweb(self,params={}):
+    def searchadweb(self,params={}):
         print("yay")
-        myparams=self.get_some_post_data(params=("job","lieu","rayon"))
-        self.render_figure.set_param("s",(myparams["job"] + " " +myparams["lieu"] + " dans un rayon de " + myparams["rayon"]+" km"))
-        print("job ::: ",myparams["job"],myparams["lieu"])
-        ok=self.db.Job.getplacesnearby(myparams["job"],myparams["lieu"])
-        self.render_figure.set_param("jobs",ok["rows"])
+        myparams=self.get_some_post_data(params=("ad","lieu","rayon"))
+        self.render_figure.set_param("s",(myparams["ad"] + " " +myparams["lieu"] + " dans un rayon de " + myparams["rayon"]+" km"))
+        print("ad ::: ",myparams["ad"],myparams["lieu"])
+        ok=self.db.Ad.getplacesnearby(myparams["ad"],myparams["lieu"])
+        self.render_figure.set_param("ads",ok["rows"])
         self.render_figure.set_param("message",ok["message"])
         try:
-            print("job",myparams["job"],myparams["lieu"])
-            haha=self.scriptruby("job",myparams["job"],myparams["lieu"],myparams["rayon"]).lancer()
+            print("ad",myparams["ad"],myparams["lieu"])
+            haha=self.scriptruby("ad",myparams["ad"],myparams["lieu"],myparams["rayon"]).lancer()
         except Exception as e:
             print(e)
         print(ok,"OHHHHHHH EHHHHHH")
-        return self.render_figure.render_figure("welcome/searchjob.html")
-    def searchjob(self,params={}):
+        return self.render_figure.render_figure("welcome/searchad.html")
+    def searchad(self,params={}):
         print("yay")
-        myparams=self.get_some_post_data(params=("job","lieu"))
-        self.render_figure.set_param("s",(myparams["job"] + " " +myparams["lieu"]))
-        ok=self.db.Job.getplacesnearby(myparams["job"],myparams["lieu"])
-        self.render_figure.set_param("jobs",ok["rows"])
+        myparams=self.get_some_post_data(params=("ad","lieu"))
+        self.render_figure.set_param("s",(myparams["ad"] + " " +myparams["lieu"]))
+        ok=self.db.Ad.getplacesnearby(myparams["ad"],myparams["lieu"])
+        self.render_figure.set_param("ads",ok["rows"])
         self.render_figure.set_param("message",ok["message"])
-        return self.render_figure.render_figure("welcome/searchjob.html")
-    def voirjob(self,params={}):
+        return self.render_figure.render_figure("welcome/searchad.html")
+    def voirad(self,params={}):
         getparams=("id",)
         myparam=self.get_this_route_param(getparams,params)
-        self.render_figure.set_param("job",self.db.Job.getbyid(myparam["id"]))
-        return self.render_figure.render_figure("welcome/voirjob.html")
+        self.render_figure.set_param("ad",self.db.Ad.getbyid(myparam["id"]))
+        return self.render_figure.render_figure("welcome/voirad.html")
     def voirtoutcequejaiajoute(self,data):
 
         print("tout")
-        tout=self.db.Job.getall()
+        tout=self.db.Ad.getall()
         print("tout")
         print(tout,"tout")
         self.render_figure.set_param("tout",tout)
@@ -172,11 +177,12 @@ class Route():
             ROUTES={
 
 
-                    '^/chercherjob$': self.searchjob,
-                    '^/chercherjobweb$': self.searchjobweb,
-                    '^/newjob$': self.newjob,
-                    "^/voirjob/([0-9]+)$":self.voirjob,
-                    '^/createjob$': self.createjob,
+                    '^/chercherad$': self.searchad,
+                    '^/chercheradweb$': self.searchadweb,
+                    '^/samecity$': self.samecity,
+                    '^/newad$': self.newad,
+                    "^/voirad/([0-9]+)$":self.voirad,
+                    '^/createad$': self.createad,
                     '^/toutcequejaiajoute$': self.voirtoutcequejaiajoute,
                     '^/allscript$': self.allscript,
                     '^/$': self.hello
