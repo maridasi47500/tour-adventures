@@ -1,0 +1,25 @@
+# Logfile created on 2025-04-20 23:26:10 -0300 by logger.rb/v1.7.0
+I, [2025-04-20T23:27:01.923211 #7701]  INFO -- : 
+je recherche un emploi avec la page numero 1 : https://candidat.francetravail.fr/offres/recherche?lieux=Região Sudeste&motsCles=informatique&offresPartenaires=true&range=0-19&rayon=100&tri=0
+I, [2025-04-20T23:27:03.012109 #7701]  INFO -- : 
+je recherche un emploi avec la page numero 2 : https://fr.talent.com/jobs?k=informatique&l=Rio de Janeiro&radius=100
+I, [2025-04-20T23:27:03.227275 #7701]  INFO -- : 
+je recherche un emploi avec la page numero 3 : https://www.flers-emplois.com/emploi/recherche.html?k=informatique+Rio de Janeiro
+I, [2025-04-20T23:27:03.519842 #7701]  INFO -- : 
+je recherche un emploi avec la page numero 4 : https://www.cyphoma.com/search?utf8=%E2%9C%93&i18n_locale=fr&search%5Bpro%5D=&search%5Border%5D=&search%5Bpage%5D=&search%5Bq%5D=informatique&search%5Bcategories%5D=&search%5Blocations%5D=4f7cea54c736276288002ce4&search%5Btype%5D=&search%5Burgent%5D=0&search%5Bnew_product%5D=0&search%5Bnew_product%5D=&search%5Bwith_medium%5D=0&commit=
+I, [2025-04-20T23:27:03.735773 #7701]  INFO -- : 
+je recherche un emploi avec la page numero 5 : https://www.stages-emplois.com/recherche-emploi.php?qemploi=informatique&qville=rio de janeiro
+I, [2025-04-20T23:27:03.965264 #7701]  INFO -- : 
+je recherche un emploi avec la page numero 6 : https://emploi.lefigaro.fr/offres-emploi/v/rio-de-janeiro-Região Sudeste
+I, [2025-04-20T23:27:04.200928 #7701]  INFO -- : 
+je recherche un emploi avec la page numero 7 : https://www.jemepropose.com/annonces/rio de janeiro-Re/?keywords=informatique
+I, [2025-04-20T23:27:04.626458 #7701]  INFO -- : 
+je recherche un emploi avec la page numero 8 : https://www.adecco.fr/resultats-offres-emploi/d-guyane-fran%C3%A7aise/
+I, [2025-04-20T23:27:04.872734 #7701]  INFO -- : 
+je recherche un emploi avec la page numero 9 : https://www.fomatguyane.fr/offres-d-emploi/offres-kourou
+I, [2025-04-20T23:27:14.883107 #7701]  INFO -- : 
+ cherche cyphoma
+E, [2025-04-20T23:28:08.939851 #7701] ERROR -- : 
+il y a eu un problème pour choisir le metier dans la page : {:title=>"Annonces \"informatique\" Rio de Janeiro (Re) • Cyphoma"}
+I, [2025-04-20T23:28:08.977623 #7701]  INFO -- : 
+ cherche fomat
