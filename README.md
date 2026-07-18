@@ -1,20 +1,20 @@
 # bienvenue 
 # README
 
-
+tu imagines un reseau social, une connexion a un reseau social, ou des api ou script qui postent sur un reseau social
 ## anonymous citizen
 *    bienvenue à anonymous account
 *    rester connecte(e sur les reseaux
-*    un musicien autre pays , autre instrument fait le concert dans la meme ville
-*    tu peux poster photos, journla musique, sport, langage/langage informatique
-- search for your favorite musician
+*    tu te connectes a un musicien dun autre pays , qui joue un autre instrument et qui fait le concert dans la meme ville par hasard
+*    tu peux poster tes photos, journla musique, sport, langage/langage informatique
+- you search for your favorite musician
 - postt something on social network
 - fill in your sport jounral
 - fill in your music practice journal on your social network
 - play apps with your mood  or throw  a die 
 
 ## hacker cafe
-*    hacker cafe : concert voyage avec un gps, rejoindre un concert autre musicien
+*    hacker cafe : tu fais des concert et tu voyage avec un gps, tu veux rejoindre dans un concert un-e autre musicien-ne pour jour avec
 - anonymous-tour-vlogger
 - act as the musician on tour  
 - update your tour
@@ -28,7 +28,7 @@
 
 
 ## web artisans
-*    des musiciens sont des web artisans postent musique / trucs
+*    des musiciens sont des web artisans (web designers) postent de la musique / trucs
 
 - post something about music
 - post about you
