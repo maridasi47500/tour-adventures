@@ -12,7 +12,32 @@ tu imagines un reseau social, une connexion a un reseau social, ou des api ou sc
 - fill in your sport jounral
 - fill in your music practice journal on your social network
 - play apps with your mood  or throw  a die 
+- exemple :
+- lieu : hall de concert philharmonique
+- ville : ma ville
+- sexe f
+- texte : je joue de la trompette  je cherche un musicien de cor qui fait le concert dans la même ville, par hasard il y aurait quelqu'un ?
+- photo : voilà ma photo
+- texte : aujourd'hui j eme suis entrainee 2 heures
+- texte : langage préférés ruby/python
+- texte : langue mieux parlée français/anglais
+- texte : photo de moi qui joue de trompette
+  
+autre
+- 
 
+
+- lieu : hall de concert symphonique
+- ville : mon autre ville
+- sexe m
+- texte : je joue de la hautbois  je cherche un musicien de percussions qui fait le concert dans la même ville, par hasard il y aurait quelqu'un ?
+- photo : voilà ma photo
+- texte : aujourd'hui j eme suis entraine 3 heures
+- texte : langage préférés node/php
+- texte : langue mieux parlée espagnol/italien
+- texte : photo de moi qui joue de hautbois
+
+- 
 ## hacker cafe
 *    hacker cafe : tu fais des concert et tu voyage avec un gps, tu veux rejoindre dans un concert un-e autre musicien-ne pour jour avec
 - anonymous-tour-vlogger
@@ -20,6 +45,21 @@ tu imagines un reseau social, une connexion a un reseau social, ou des api ou sc
 - update your tour
 - try to join a concert
 
+exemple
+-
+- groupe de musicien 1
+- lieu ville n°1
+- texte : Moi , Truc on fait un concert dans la ville
+
+- musicien(ne) 2
+- lieu ville n°1
+- texte : @machin serait -il possible de join truc&machin pour la tournée musicale
+
+-musicienne 2
+- lieu ville n°5
+- super le voyage continue ville n°5 en avant pour le concert
+
+- 
 ## rails adventures
 - travel with gps
 - share photo of travel
