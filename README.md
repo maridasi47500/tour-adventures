@@ -90,3 +90,12 @@ sh mysite.sh
 
 ````
 
+| il y a  | oui non/quoi |
+| --- | --- |
+| boule de crystal  | non  |
+| art of coding  | non  |
+| fake social network | oui |
+
+
+
+
